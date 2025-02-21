@@ -5,3 +5,11 @@ body {
     margin:0;
     background-color: #f0f0f0;
 }
+
+#box {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    position:absolute;
+    transition: all 0.5s ease; /* smooth transition for movement */
+}
