@@ -1,17 +1,20 @@
+ /* Full-screen setup */
 body, html {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin:0;
-    background-color: #f0f0f0;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    height: 100%;
+    display: block;
+    background-color: #f0f0f0; /* Soft background */
+    font-family: Arial, sans-serif;
+    position: relative; /* Important for absolute positioning of the box */
+    overflow: hidden; /* Hide any content that goes outside the window */
 }
 
+ /* The box styles */
 #box {
-    width: 100px;
-    height: 100px;
-    background-color: lightblue;
+    position:absolute; /* Absolute positioning allows for flexible movement */
+    width: 125px;
+    height: 125px;
+    background-color: #ff8c00; /* Initial color */
     border-radius: 10px;
-    transition: transform 1s ease, background-color 1s ease; /* smooth transition for movement */
+    transition: transform 1s ease, background-color 1s ease;
 }
