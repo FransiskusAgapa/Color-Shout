@@ -45,7 +45,10 @@ recognition.onresult = (event) => {
     }
 
     // Change box color on "test"
-    if (command.includes("test")) {
+    if (command.includes("tik")) {
+        changeColor();
+    }
+    if (command.includes("tok")){
         changeColor();
     }
 
