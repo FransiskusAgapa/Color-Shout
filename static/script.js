@@ -16,15 +16,16 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 recognition.continuous = true; // Enable continuous listening
 
-
 // change text inside button when its clicked
 button.addEventListener("click",()=>{
     if(isOn){
         recognition.start();
         button.textContent = "Off";
+        button.classList.add("off-state")
     } else {
         recognition.stop();
         button.textContent = "On";
+        button.classList.remove("off-state")
     }
     isOn = !isOn;
 })

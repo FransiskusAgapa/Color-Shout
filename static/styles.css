@@ -21,16 +21,18 @@ html {
 
 /* Style for buttons */
 .toggle-btn {
-    margin-top: 5px;
+    margin-top: 18px;
     margin-left: 18px;
-    background-color: #A8D5BA; /* Soft, vibrant color */
-    color: #fff; /* White text for contrast */
-    padding: 15px 30px; /* Larger padding for comfort */
-    font-size: 18px; /* Comfortable, readable font size */
-    border-radius: 10px; /* Rounded corners for a friendly feel */
-    border: none; /* No border for a cleaner look */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.3s ease; /* Smooth transition effect */
+    padding: 20px 30px; /* Padding ensures the button has a larger clickable area */
+    background-color: #4CAF50; /* Soft green color */
+    color: white; /* Text color */
+    font-size: 18px; /* Text size */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    display: inline-block; /* Ensures button doesn't shrink to fit text */
+    text-align: center; /* Centers text inside the button */
+    transition: background-color 0.3s ease; /* Smooth color change on hover *//
 }
 
 .toggle-btn:hover {
@@ -40,4 +42,9 @@ html {
 
 .toggle-btn:active {
     background-color: #4a44cc; /* Darker color when pressed */ 
+}
+
+ /* Soft calm red color for "off" state */
+.off-state {
+    background-color: #FF6F61; /* Soft calm red */
 }
