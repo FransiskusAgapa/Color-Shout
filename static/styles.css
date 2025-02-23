@@ -1,20 +1,43 @@
  /* Full-screen setup */
-body, html {
+html {
     margin: 10px;
-    height: 100%;
-    display: block;
-    background-color: #f0f0f0; /* Soft background */
+    height: 80%;
+    background-color:  "#F0F0F0"; /* Soft white background */
     font-family: Arial, sans-serif;
-    position: relative; /* Important for absolute positioning of the box */
-    overflow: hidden; /* Hide any content that goes outside the window */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
  /* The box styles */
 #box {
-    position:absolute; /* Absolute positioning allows for flexible movement */
+    position:relative; /* change to Absolute positioning to allow for flexible movement */
     width: 125px;
     height: 125px;
     background-color: #ff8c00; /* Initial color */
     border-radius: 10px;
-    transition: transform 1s ease, background-color 1s ease;
+    transition: transform .5s ease, background-color .5s ease;
+}
+
+/* Style for buttons */
+.toggle-btn {
+    margin-top: 5px;
+    margin-left: 18px;
+    background-color: #A8D5BA; /* Soft, vibrant color */
+    color: #fff; /* White text for contrast */
+    padding: 15px 30px; /* Larger padding for comfort */
+    font-size: 18px; /* Comfortable, readable font size */
+    border-radius: 10px; /* Rounded corners for a friendly feel */
+    border: none; /* No border for a cleaner look */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+.toggle-btn:hover {
+    background-color: #5a52e1; /* Slightly darker color on hover */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.toggle-btn:active {
+    background-color: #4a44cc; /* Darker color when pressed */ 
 }
