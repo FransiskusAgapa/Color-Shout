@@ -1,7 +1,10 @@
-// Get the box element
 const box = document.getElementById("box");
-const button = document.getElementById("toggleButton")
-let isOn = false // default button condition
+const toggleButton = document.getElementById("toggleButton");
+const setCommandButton = document.getElementById("setCommandButton");
+const customCommandInput = document.getElementById("customCommandInput");
+
+let isOn = false; // Default button condition
+let customCommand = ""; // Default custom command
 
 // Function to change the color of the box to a random soft color
 function changeColor() {
@@ -11,44 +14,39 @@ function changeColor() {
 
 // Speech recognition setup
 const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-recognition.lang = 'en-US'; // American English
+recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 recognition.continuous = true; // Enable continuous listening
 
-// change text inside button when its clicked
-button.addEventListener("click",()=>{
-    if(isOn){
+// Change text inside button when clicked
+toggleButton.addEventListener("click", () => {
+    if (isOn) {
         recognition.start();
-        button.textContent = "Off";
-        button.classList.add("off-state")
+        toggleButton.textContent = "Off";
+        toggleButton.classList.add("off-state");
     } else {
         recognition.stop();
-        button.textContent = "On";
-        button.classList.remove("off-state")
+        toggleButton.textContent = "On";
+        toggleButton.classList.remove("off-state");
     }
     isOn = !isOn;
-})
+});
 
+// Handle custom command submission
+setCommandButton.addEventListener("click", () => {
+    customCommand = customCommandInput.value.toLowerCase();
+    setCommandButton.textContent = "Change Command"; // Change button name after submission
+    console.log("Custom command set to:", customCommand);
+});
 
 // Handle recognition results
 recognition.onresult = (event) => {
     const command = event.results[0][0].transcript.toLowerCase();
     console.log('Heard:', command);
 
-    // Turn on recognition if "on" is heard
-    if (command.includes("on")) {
-        if (recognition.state === 'inactive') {
-            recognition.start(); // Restart the recognition if it's inactive
-            console.log('Speech recognition started');
-        }
-    }
-
-    // Change box color on "test"
-    if (command.includes("tik")) {
-        changeColor();
-    }
-    if (command.includes("tok")){
+    // Change box color on default command or custom command
+    if (command.includes(customCommand) || command.includes("tik") || command.includes("tok")) {
         changeColor();
     }
 

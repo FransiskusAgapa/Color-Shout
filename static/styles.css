@@ -1,50 +1,81 @@
- /* Full-screen setup */
+/* Full-screen setup */
 html {
     margin: 10px;
     height: 80%;
-    background-color:  "#F0F0F0"; /* Soft white background */
+    background-color: #F0F0F0; /* Soft white background */
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
- /* The box styles */
+/* The box styles */
 #box {
-    position:relative; /* change to Absolute positioning to allow for flexible movement */
-    width: 125px;
-    height: 125px;
+    position: relative;
+    width: 200px;
+    height: 200px;
     background-color: #ff8c00; /* Initial color */
     border-radius: 10px;
-    transition: transform .5s ease, background-color .5s ease;
+    transition: transform 1s ease, background-color 1s ease;
 }
 
 /* Style for buttons */
 .toggle-btn {
-    margin-top: 18px;
-    margin-left: 18px;
-    padding: 20px 30px; /* Padding ensures the button has a larger clickable area */
-    background-color: #4CAF50; /* Soft green color */
-    color: white; /* Text color */
-    font-size: 18px; /* Text size */
-    border: none; /* Remove default border */
-    border-radius: 10px; /* Rounded corners */
-    cursor: pointer; /* Change cursor on hover */
-    display: inline-block; /* Ensures button doesn't shrink to fit text */
-    text-align: center; /* Centers text inside the button */
-    transition: background-color 0.3s ease; /* Smooth color change on hover *//
+    background-color: #41e146;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.2s ease;
 }
 
 .toggle-btn:hover {
-    background-color: #5a52e1; /* Slightly darker color on hover */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    background-color: #2ab52f;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .toggle-btn:active {
-    background-color: #4a44cc; /* Darker color when pressed */ 
+    background-color: #4a44cc;
 }
 
- /* Soft calm red color for "off" state */
+/* Soft calm red color for "off" state */
 .off-state {
-    background-color: #FF6F61; /* Soft calm red */
+    background-color: #FF6F61;
+}
+
+/* 'change command' btn and 'on/off' btn */
+.toggle-btn, #setCommandButton {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+
+#inputContainer {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#customCommandInput {
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#customCommandInput:focus {
+    border-color: #4CAF50;
+}
+
+#setCommandButton {
+    background-color: #008CBA;
+    color: white;
+}
+
+#setCommandButton:hover {
+    background-color: #005F87;
 }
