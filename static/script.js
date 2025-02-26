@@ -1,3 +1,4 @@
+// Get the box element and button elements
 const box = document.getElementById("box");
 const toggleButton = document.getElementById("toggleButton");
 const setCommandButton = document.getElementById("setCommandButton");
@@ -19,16 +20,24 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 recognition.continuous = true; // Enable continuous listening
 
-// Change text inside button when clicked
+// Change text inside button when clicked and disable input
 toggleButton.addEventListener("click", () => {
     if (isOn) {
         recognition.start();
         toggleButton.textContent = "Off";
         toggleButton.classList.add("off-state");
+        customCommandInput.disabled = false;  // Enable input when "on"
+        setCommandButton.disabled = false;
+        // setCommandButton.style.backgroundColor = "#008CBA"; // 'set command' btn color to blue when active
+        // setCommandButton.style.cursor = "pointer";
     } else {
         recognition.stop();
         toggleButton.textContent = "On";
         toggleButton.classList.remove("off-state");
+        customCommandInput.disabled = true; // Disable input when "off"
+        setCommandButton.disabled = true;
+        // setCommandButton.style.backgroundColor = "#979897"; // 'set command' btn color to blue when off
+        // setCommandButton.style.cursor = "default";
     }
     isOn = !isOn;
 });
@@ -36,8 +45,10 @@ toggleButton.addEventListener("click", () => {
 // Handle custom command submission
 setCommandButton.addEventListener("click", () => {
     customCommand = customCommandInput.value.toLowerCase();
-    setCommandButton.textContent = "Change Command"; // Change button name after submission
-    console.log("Custom command set to:", customCommand);
+    if (customCommand) {
+        setCommandButton.textContent = "Update Command"; // Update button name after a command is set
+        console.log("Custom command set to:", customCommand);
+    }
 });
 
 // Handle recognition results

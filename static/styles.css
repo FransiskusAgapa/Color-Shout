@@ -11,9 +11,10 @@ html {
 
 /* The box styles */
 #box {
+    margin-left: 70px;
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height:300px;
     background-color: #ff8c00; /* Initial color */
     border-radius: 10px;
     transition: transform 1s ease, background-color 1s ease;
@@ -27,8 +28,8 @@ html {
     transition: background-color 0.2s ease;
 }
 
-.toggle-btn:hover {
-    background-color: #2ab52f;
+.toggle-btn:hover, #setCommandButton:hover {
+    background-color: #979897;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -73,9 +74,6 @@ html {
 
 #setCommandButton {
     background-color: #008CBA;
-    color: white;
 }
 
-#setCommandButton:hover {
-    background-color: #005F87;
-}
+
