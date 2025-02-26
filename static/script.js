@@ -23,21 +23,21 @@ recognition.continuous = true; // Enable continuous listening
 // Change text inside button when clicked and disable input
 toggleButton.addEventListener("click", () => {
     if (isOn) {
-        recognition.start();
-        toggleButton.textContent = "Off";
-        toggleButton.classList.add("off-state");
-        customCommandInput.disabled = false;  // Enable input when "on"
-        setCommandButton.disabled = false;
-        // setCommandButton.style.backgroundColor = "#008CBA"; // 'set command' btn color to blue when active
-        // setCommandButton.style.cursor = "pointer";
-    } else {
         recognition.stop();
         toggleButton.textContent = "On";
         toggleButton.classList.remove("off-state");
-        customCommandInput.disabled = true; // Disable input when "off"
+        customCommandInput.disabled = false; // Enable input when "off"
+        setCommandButton.disabled = false;
+        setCommandButton.style.backgroundColor = "#008CBA"; // 'set command' btn color to blue when active
+        setCommandButton.style.cursor = "pointer";
+    } else {
+        recognition.start();
+        toggleButton.textContent = "Off";
+        toggleButton.classList.add("off-state");
+        customCommandInput.disabled = true;  // Disable input when "on"
         setCommandButton.disabled = true;
-        // setCommandButton.style.backgroundColor = "#979897"; // 'set command' btn color to blue when off
-        // setCommandButton.style.cursor = "default";
+        setCommandButton.style.backgroundColor = "#979897"; // 'set command' btn color to blue when off
+        setCommandButton.style.cursor = "default";
     }
     isOn = !isOn;
 });
