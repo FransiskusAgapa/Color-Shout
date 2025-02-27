@@ -9,6 +9,10 @@ html {
     align-items: center;
 }
 
+.boxContainer{
+    display:  flex;
+    justify-content: space-evenly;
+}
 /* The box styles */
 #box {
     margin-left: 70px;
@@ -52,6 +56,11 @@ html {
     font-size: 16px;
 }
 
+/* input section  */
+.boxInputContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
 #inputContainer {
     margin-top: 10px;
     display: flex;
