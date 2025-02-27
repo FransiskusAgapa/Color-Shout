@@ -1,2 +1,2 @@
 # Color Shout
-## Simple web-based app to make learning color exciting and engaging for kids. 
+## Simple Web-Based App to Make Learning Color Exciting and Engaging for Kids. 
