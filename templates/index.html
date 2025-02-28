@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shout The Color</title>
+    <title>MoveIt</title>
     <!-- link web icon  -->
-     <link rel="icon" type="/assets/Color Shout.ico">
-    <!-- link css script -->
+    <link rel="icon" type="/assets/Color Shout.ico">
+    <!-- link to css script -->
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
+
+    <!-- Ready to Play Dialog -->
+    <div id="readyDialog" class="modal">
+        <div class="modal-content">
+            <p>Are You Ready to Play?</p>
+            <button id="closeDialog">Yes</button>
+        </div>
+    </div>
 
     <!-- Box Section -->
     <div class="boxContainer">
@@ -19,18 +27,12 @@
 
     <!-- Input Section -->
     <div class="boxInputContainer">
-        <!-- 1st player input container -->
         <div class="inputContainer">
-            <input type="text" class="customCommandInput" placeholder="Enter custom command">
-            <button class="setCommandButton">Set Command</button>
-            <button class="toggleButton toggle-btn">On</button>
+            <h2>Player 1 Score: </h2>
         </div>
 
-        <!-- 2nd player input container -->
         <div class="inputContainer">
-            <input type="text" class="customCommandInput" placeholder="Enter custom command">
-            <button class="setCommandButton">Set Command</button>
-            <button class="toggleButton toggle-btn">On</button>
+            <h2>Player 2 Score: </h2>
         </div>
     </div>
 

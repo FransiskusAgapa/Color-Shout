@@ -1,0 +1,12 @@
+
+# TODO
+- welcome box dialog 
+- setup player name by speech / voice
+
+- set the player name inside the box 
+- set a score box set to 0 by default 
+
+- set up voice recognition as guess input 
+- increase score if guess is correct
+- change score box to be green for correct guess
+  red otherwise
