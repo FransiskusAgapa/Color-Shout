@@ -12,6 +12,12 @@ html, body {
     font-size: 1.1rem;
 }
 
+/* Responsive Box */
+.responsive-box {
+    width: min(25vw, 800px); /* Max 800px, but scales with viewport */
+    height: min(25vw, 800px);
+}
+
 /* Responsive Text */
 .responsive-text {
     font-size: clamp(1rem, 1vw, 2.5rem); /* Scales min - 1rem. 1vw - Dynamic scaling based on viewport width (adapts to screen size). max - 2.5rem */
@@ -163,10 +169,6 @@ html, body {
         padding: 5px;
     }
 
-    .box {
-        width: min(25vw, 800px); /* Max 800px, but scales with viewport */
-        height: min(25vw, 800px);
-    }
 }
 
 /* For medium screens (width < 830px) */
