@@ -14,11 +14,10 @@ html, body {
 
 /* Responsive Text */
 .responsive-text {
-    font-size: clamp(1rem, 2vw, 2.5rem); /* Scales min - 1rem. 2vw - Dynamic scaling based on viewport width (adapts to screen size). max - 2.5rem */
+    font-size: clamp(1rem, 1vw, 2.5rem); /* Scales min - 1rem. 1vw - Dynamic scaling based on viewport width (adapts to screen size). max - 2.5rem */
     text-align: center;
     transition: font-size 0.4s ease; /* Smooth resizing */
 }
-
 
 /* welcome box */
 /* Modal Styling */
@@ -72,8 +71,6 @@ html, body {
     font-size: 3rem; /* Large and readable */
     font-weight: bold;
 }
-
-
 
 /* Box container */
 .boxContainer {
@@ -184,7 +181,7 @@ html, body {
     }
 
     .box {
-        width: min(20vw, 500px); /* Bigger relative size on smaller screens */
+        width: min(20vw, 500px); /* Bigger relative size on medium screens */
         height: min(20vw, 500px);
     }
 }
@@ -192,7 +189,6 @@ html, body {
 /* For small screens (width < 500px) */
 @media(max-width: 500px){
     html, body {
-        font-size: 12px; /* min font size */
         background-color: red;
     }
 
