@@ -12,6 +12,14 @@ html, body {
     font-size: 1.1rem;
 }
 
+/* Responsive Text */
+.responsive-text {
+    font-size: clamp(1rem, 2vw, 2.5rem); /* Scales min - 1rem. 2vw - Dynamic scaling based on viewport width (adapts to screen size). max - 2.5rem */
+    text-align: center;
+    transition: font-size 0.4s ease; /* Smooth resizing */
+}
+
+
 /* welcome box */
 /* Modal Styling */
 .modal {
@@ -56,20 +64,13 @@ html, body {
 /* Game/App title */
 /* Make the H1 header always stay at the top */
 #gameTitle {
-    position: fixed; /* Keeps it at the top */
-    top: 0;
+    position: relative; 
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     text-align: center;
-    background: linear-gradient(to right, #ff595e, #ffca3a, #8ac926, #1982c4, #6a4c93); /* Fun gradient */
-    color: white; /* Text color */
     font-size: 3rem; /* Large and readable */
     font-weight: bold;
-    padding: 15px 0; /* Spacing for better readability */
-    border-bottom: 5px solid #ffca3a; /* Adds a playful underline */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    z-index: 1000; /* Ensures it stays on top */
 }
 
 
@@ -86,10 +87,10 @@ html, body {
 
 /* Box styles */
 .box {
-    width: 48vw;  /* Each box takes 48% of viewport width */
-    height: 48vw; /* Keep aspect ratio */
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 800px;
+    max-height: 800px;
+    min-width: 200px;
+    min-height: 200px;
     margin: 50px;
     background-color: #ff8c00; 
     border-radius: 10px;
@@ -97,7 +98,7 @@ html, body {
 }
 
 /* Input section */
-.boxInputContainer {
+.boxScoreContainer {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -159,34 +160,59 @@ html, body {
 }
 
 /* Responsive Design */
-@media (max-width: 700px) {
+/* For larger screens (width > 820px) */
+@media (min-width: 831px) {
     #gameTitle {
-        padding: 10px 0;
-    }
-    body {
-        font-size: 0.8rem; /* slightly smaller font size */
-    }
-    
-    .boxContainer {
-        flex-direction: column;
-        background-color: red;
+        padding: 5px;
     }
 
     .box {
-        margin: 40px;
-        width: 80vw;
-        height: 80vw;
-        max-width: 250px;
-        max-height: 250px;
+        width: min(25vw, 800px); /* Max 800px, but scales with viewport */
+        height: min(25vw, 800px);
+    }
+}
+
+/* For medium screens (width < 830px) */
+@media (max-width: 830px) {
+
+    #gameTitle {
+        padding: 5px;
     }
 
-    .boxInputContainer {
+    .boxContainer {
+        background-color: transparent;
+    }
+
+    .box {
+        width: min(20vw, 500px); /* Bigger relative size on smaller screens */
+        height: min(20vw, 500px);
+    }
+}
+
+/* For small screens (width < 500px) */
+@media(max-width: 500px){
+    html, body {
+        font-size: 12px; /* min font size */
+        background-color: red;
+    }
+
+    #gameTitle {
+        padding: 5px;
+    }
+
+    /* box container setting */
+    .boxContainer {
+        background-color: transparent;
         flex-direction: column;
-        align-items: center;
     }
 
-    .inputContainer {
-        width: 80%;
+    .box {
+        width: min(10vw, 250px); /* Bigger relative size on smaller screens */
+        height: min(10vw, 250px);
+    }
+
+    .scoreContainer {
+        width: 48%;
         justify-content: center;
     }
 }
