@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-
     <!-- Ready to Play Dialog -->
     <div id="readyDialog" class="modal">
         <div class="modal-content">
@@ -19,23 +18,32 @@
         </div>
     </div>
 
-    <!-- game title -->
-    <h1 id="gameTitle responsive-text">Shout The Color</h1> 
+    <!-- Name Input Dialog -->
+    <div id="nameDialog" class="modal">
+        <div class="modal-content">
+            <p id="namePrompt">Enter 1st Kid's Name:</p>
+            <input type="text" id="kidNameInput" placeholder="Enter name...">
+            <button id="submitName">Next</button>
+        </div>
+    </div>
+
+    <!--Title Section -->
+    <h1 id="gameTitle" class="responsive-text">Shout The Color</h1> 
 
     <!-- Box Section -->
     <div class="boxContainer">
-        <div class="box responsive-box"></div>
-        <div class="box responsive-box"></div>
+        <div class="box responsive-box" id="box1"></div>
+        <div class="box responsive-box" id="box2"></div>
     </div>
 
-    <!-- Input Section -->
+    <!-- Score Section -->
     <div class="boxScoreContainer">
         <div class="scoreContainer responsive-text">
-            <h2>1st kid's Score: </h2>
+            <h2 id="player1Name">1st Kid's Score: </h2>
         </div>
 
         <div class="scoreContainer responsive-text">
-            <h2>2nd kid's Score: </h2>
+            <h2 id="player2Name">2nd Kid's Score: </h2>
         </div>
     </div>
 

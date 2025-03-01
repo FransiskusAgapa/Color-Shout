@@ -9,18 +9,23 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+body {
+    min-width: 614px; /* Ensures the window doesn't scale down past this */
+    overflow-x: hidden; /* Allows scrolling if content overflows */
 }
 
 /* Responsive Box */
 .responsive-box {
-    width: min(25vw, 800px); /* Max 800px, but scales with viewport */
-    height: min(25vw, 800px);
+    width: min(20vw, 700px); /* Max 600px, but scales with viewport */
+    height: min(20vw, 700px);
 }
 
 /* Responsive Text */
 .responsive-text {
-    font-size: clamp(1rem, 1vw, 2.5rem); /* Scales min - 1rem. 1vw - Dynamic scaling based on viewport width (adapts to screen size). max - 2.5rem */
+    font-size: clamp(1rem, .4vw, 2.5rem); /* Scales min - 1rem. 1vw - Dynamic scaling based on viewport width (adapts to screen size). max - 2.5rem */
     text-align: center;
     transition: font-size 0.4s ease; /* Smooth resizing */
 }
@@ -92,8 +97,8 @@ html, body {
 .box {
     max-width: 800px;
     max-height: 800px;
-    min-width: 200px;
-    min-height: 200px;
+    min-width: 182px;
+    min-height: 182px;
     margin: 50px;
     background-color: #ff8c00; 
     border-radius: 10px;
@@ -162,18 +167,59 @@ html, body {
     background-color: #008CBA;
 }
 
+/* Input Field */
+#kidNameInput {
+    padding: 12px;
+    margin-top: 10px;
+    border: 3px solid #ffca3a; /* Bright playful yellow */
+    border-radius: 25px; /* Rounded for a friendly look */
+    font-size: 18px;
+    width: 80%;
+    text-align: center;
+    background-color: #fff8dc; /* Soft yellowish white */
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#kidNameInput:focus {
+    border-color: #1982c4; /* Blue when active */
+    background-color: #e0f7fa; /* Light blue focus effect */
+}
+
+/* Send Button */
+#submitName {
+    margin-top: 10px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(to right, #ff595e, #ffca3a, #8ac926); /* Fun gradient */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+#submitName:hover {
+    background: linear-gradient(to right, #ff4d4d, #ffa500, #6ac927); /* Slightly brighter hover */
+    transform: scale(1.05); /* Slight bounce effect */
+}
+
+#submitName:active {
+    transform: scale(0.95); /* Button presses in slightly */
+}
+
 /* Responsive Design */
 /* For larger screens (width > 820px) */
 @media (min-width: 831px) {
     #gameTitle {
         padding: 5px;
     }
-
 }
 
 /* For medium screens (width < 830px) */
 @media (max-width: 830px) {
-
     #gameTitle {
         padding: 5px;
     }
@@ -183,33 +229,9 @@ html, body {
     }
 
     .box {
-        width: min(20vw, 500px); /* Bigger relative size on medium screens */
-        height: min(20vw, 500px);
+        width: min(10vw, 100px); /* Bigger relative size on medium screens */
+        height: min(10vw, 100px);
     }
 }
 
-/* For small screens (width < 500px) */
-@media(max-width: 500px){
-    html, body {
-        background-color: red;
-    }
-
-    #gameTitle {
-        padding: 5px;
-    }
-
-    /* box container setting */
-    .boxContainer {
-        background-color: transparent;
-        flex-direction: column;
-    }
-
-    .box {
-        width: min(10vw, 250px); /* Bigger relative size on smaller screens */
-        height: min(10vw, 250px);
-    }
-
-    .scoreContainer {
-        width: 50%;
-    }
-}
+/* For small screen (width > 500pxs */
